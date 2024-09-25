@@ -8,10 +8,6 @@ Following these steps, you can create a local account without needing to sign in
 
 ![Local Account Setup Screen](./images/LocalAccount.png)
 
-## **Prerequisites**
-- A **Windows 11** currently in setup.
-- The device **disconnected from the internet** (either remove the Ethernet cable or disconnect from Wi-Fi).
-
 ## **Steps to Bypass Microsoft Account Setup**
 
 ### 1. Disconnect from the Internet
@@ -23,19 +19,19 @@ Following these steps, you can create a local account without needing to sign in
 
 ### 3. Stop at the Secondary Keyboard Layout Screen
    - When you reach the **Secondary Keyboard Layout** screen, **do not click Skip**.
-   - If you accidentally skipped and reached the Network Setup Screen, restart the device. You won't be able to open the Developer Console on this screen.
+   - If you accidentally skipped and reached the Network Setup Screen, don't stress. I have a guide in the troubleshooting section.</a>
 
 ### 4. Open the Developer Console
    - Press **Ctrl + Shift + J** to open the Developer Console.
    - Your screen will go dark and will appear with a prompt (indicated by a `>` symbol) at the top left of the screen.
-   > **Note:** If you can't open the console, troubleshooting steps are below
+   > **Note:** If you can't open the console, troubleshooting steps are below.
 
 ### 5. Enter the Restart Command
    - Type the following command exactly as shown:
      ```javascript
      WinJS.Application.restart("ms-cxh://LOCALONLY")
      ```
-     > **Note:** This command is case-sensitive. You can use Tab-completion to help:
+> **Note:** This command is case-sensitive. You can use Tab-completion to help:
      - After typing `WinJS.A`, press **Tab** to auto-complete `Application`.
      - After typing `res`, press **Tab** to auto-complete `restart`.
 
@@ -70,9 +66,11 @@ Following these steps, you can create a local account without needing to sign in
    - The safest way to get back to normal is to restart your computer by holding down the power button.
    - You can also restart the computer using Command Prompt or restart the Setup Application, you can find methods for these elsewhere.
 
-- **I forgot to disconnect from the internet or I am stuck on the Network Screen**:
-   - If you are on WiFi and are stuck on the connection setup screen, restart your computer. You will not be able to start the Developer Console on this screen.
-   - If you are on ethernet and Windows is checking for updates, wait until you reach the "Name this Device" screen, and you can open the Developer Console from there.
+- **I forgot to disconnect from the internet or I am stuck on the Network Setup or Microsoft Experience screens**:
+   - You can either restart the computer to go back to the beginning of the install process (recommended).
+   - Alternatively, you can connect to the internet and open the Developer Console on the "Name this Device" or the "Unlock your Microsoft Experience" screens (not recommended).
+   - If you are here after a failed attempt of the OOBE\BYPASSNRO method, you would likely be at the "Unlock your Microsoft Experience" screen, you can still open the Developer Console here.
+   > **Note:** If you are on a Microsoft Account Login Screen (prompting for email), The Developer Console is blocked. Restart your device if you cannot go back to the "Unlock your Microsoft Experience" screen.
 
 ## **Technical Details**
 - The hidden `_localAccountButton` is referenced in the `js/errorHandler.js` file on **line 31**, where an event listener triggers the local account creation process when a local account button is pressed on an error screen.
