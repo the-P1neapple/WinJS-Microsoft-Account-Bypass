@@ -32,8 +32,9 @@ Following these steps, you can create a local account without needing to sign in
      WinJS.Application.restart("ms-cxh://LOCALONLY")
      ```
 > **Note:** This command is case-sensitive. You can use Tab-completion to help:
-     - After typing `WinJS.A`, press **Tab** to auto-complete `Application`.
-     - After typing `res`, press **Tab** to auto-complete `restart`.
+
+   - After typing `WinJS.A`, press **Tab** to auto-complete `Application`.
+   - After typing `res`, press **Tab** to auto-complete `restart`.
 
 ### 6. Exit the Developer Console
    - After entering the command, press **Enter** to execute it.
