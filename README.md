@@ -6,27 +6,26 @@ This guide explains a method to bypass the Microsoft Account (MSA) requirement d
 
 Following these steps, you can create a local account without needing to sign in with or create a Microsoft account.
 
+I also have a [Youtube Tutorial](https://youtu.be/PnePd_defik) that follows the same instructions below
+
 ![Local Account Setup Screen](./images/LocalAccount.png)
 
 ## **Steps to Bypass Microsoft Account Setup**
 
-### 1. Disconnect from the Internet
-   - Unplug the Ethernet cable if you have one, If you use WiFi, ignore this step.
-
-### 2. Start Windows 11 Setup
+### 1. Start Windows 11 Setup
    - Begin the Windows 11 Setup Process.
    - Select your region and keyboard layout.
 
-### 3. Stop at the Secondary Keyboard Layout Screen
+### 2. Stop at the Secondary Keyboard Layout Screen
    - When you reach the **Secondary Keyboard Layout** screen, **do not click Skip**.
    - If you accidentally skipped and reached the Network Setup Screen, don't stress. I have a guide in the troubleshooting section.</a>
 
-### 4. Open the Developer Console
+### 3. Open the Developer Console
    - Press **Ctrl + Shift + J** to open the Developer Console.
    - Your screen will go dark and will appear with a prompt (indicated by a `>` symbol) at the top left of the screen.
    > **Note:** If you can't open the console, troubleshooting steps are below.
 
-### 5. Enter the Restart Command
+### 4. Enter the Restart Command
    - Type the following command exactly as shown:
      ```javascript
      WinJS.Application.restart("ms-cxh://LOCALONLY")
@@ -36,16 +35,16 @@ Following these steps, you can create a local account without needing to sign in
    - After typing `WinJS.A`, press **Tab** to auto-complete `Application`.
    - After typing `res`, press **Tab** to auto-complete `restart`.
 
-### 6. Exit the Developer Console
+### 5. Exit the Developer Console
    - After entering the command, press **Enter** to execute it.
    - Press **Escape** to exit the Developer Console and return to the OOBE interface.
    > **Note:** If the **Escape** key doesn't close the Console, click anywhere on the screen to ensure the console is focused and then press the key again.
 
-### 7. Local Account Setup
+### 6. Local Account Setup
    - The Secondary Keyboard Layout screen will refresh, and a **Windows 10-style local account setup screen** will appear.
    - Enter your desired **username**, **password**, and **security questions** and click **Next**.
 
-### 8. Complete the Setup
+### 7. Complete the Setup
    - The Setup will go black and will then log you in to your newly created account. Allow Windows 11 a few moments to configure the user.
    - Continue with the remaining privacy setting prompts.
    - Once finished, you will have successfully created a **local account** in Windows 11.
@@ -67,7 +66,7 @@ Following these steps, you can create a local account without needing to sign in
    - The safest way to get back to normal is to restart your computer by holding down the power button.
    - You can also restart the computer using Command Prompt or restart the Setup Application, you can find methods for these elsewhere.
 
-- **I forgot to disconnect from the internet or I am stuck on the Network Setup or Microsoft Experience screens**:
+- **I am stuck on the Network Setup or Microsoft Experience screens**:
    - You can either restart the computer to go back to the beginning of the install process (recommended).
    - Alternatively, you can connect to the internet and open the Developer Console on the "Name this Device" or the "Unlock your Microsoft Experience" screens (not recommended).
    - If you are here after a failed attempt of the OOBE\BYPASSNRO method, you would likely be at the "Unlock your Microsoft Experience" screen, you can still open the Developer Console here.
